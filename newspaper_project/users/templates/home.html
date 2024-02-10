@@ -8,7 +8,7 @@
 
     Hi  {{ user.username }}!
 
-    <p><a href="{% url 'logout' %}">Log out</a></p>
+    <p><a href="{% url 'logout' %}"></a></p>
 
     <form action="{% url 'logout' %}" method="post">
         {% csrf_token %}
