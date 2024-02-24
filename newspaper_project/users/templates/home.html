@@ -4,26 +4,19 @@
 
 {% block content %} 
 
-{% if user.is_authenticated %}
+<div class="jumbotron">
 
-    Hi  {{ user.username }}!
+    <h1 class="display-4">Newspaper app</h1>
 
-    <p><a href="{% url 'logout' %}"></a></p>
+    <p class="lead">A Newspaper website built with Django.</p>
 
-    <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
-    </form>
-    
+    <p class="lead">
 
-{% else %}
+        <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}"
+        role="button"> View All Articles</a>
 
-    <p>You are not logged in</p>
+    </p>
 
-    <a href="{% url 'login' %}">Log In</a>
-
-    <a href="{% url 'signup' %}">Sign Up</a>
-
-{% endif %}
+</div>
 
 {% endblock content %}
